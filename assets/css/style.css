@@ -1,0 +1,356 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+/* Estilizando o header */
+header { 
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 3px 0px;
+  text-align: center;
+  display: flex;            /* Usamos flexbox no próprio header */
+  justify-content: center;   /* Centraliza horizontalmente */
+  align-items: center;       /* Centraliza verticalmente */
+}
+
+h1 {
+  font-size: 40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header-content {
+  display: flex;             /* Flexbox para alinhar logo e texto */
+  justify-content: center;    /* Centraliza horizontalmente */
+  align-items: center;        /* Centraliza verticalmente */
+}
+
+.logo {
+  width: 100px;              /* Tamanho da logo */
+  margin-right: 10px;        /* Espaçamento entre a logo e o texto */
+}
+
+/* Layout principal: lateral (menu) + conteúdo */
+.container {
+  display: flex;
+  min-height: calc(130vh - 120px); /* Altura total da tela menos header e footer */
+}
+
+/* Lateral esquerda (menu) */
+.lateral {
+  background-color: rgb(245, 130, 31);
+  width: 300px;
+  padding: 28px 150px;
+  box-sizing: border-box;
+}
+
+/* Estilizando os botões */
+.button {
+  display: block; /* Para que o link ocupe toda a largura da div */
+  text-align: center;
+  padding: 10px 30px;
+  margin: 10px -100px; /* Espaçamento entre os botões */
+  background-color: #f0ad4e; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 8px; /* Borda arredondada */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+.button:hover {
+  background-color: #ec971f; /* Cor ao passar o mouse */
+}
+
+.lateral a {
+  display: block;
+  margin-bottom: 35px;
+  text-decoration: none;
+  color: black;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+/* Conteúdo principal */
+.conteudo {
+  background-color: rgba(245, 131, 31, 0.204);
+  flex-grow: 1; /* Faz o conteúdo ocupar o restante da largura */
+  padding: 20px 50px;
+  box-sizing: border-box;
+  border-left: 5px solid #ccc; /* Separador entre a lateral e o conteúdo */
+}
+
+/* Estilizando o footer */
+footer {
+  background-color: rgba(125, 99, 73, 0.496);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 12px;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Definindo altura total para o conteúdo ocupar a tela inteira */
+html, body {
+  height: 100%;
+}
+
+#pesq-sinais {
+  margin: 0;
+}
+
+.pesquisa-sinais-body {
+  padding: 3px 0px;
+  text-align: center;
+  display: flex;            /* Usamos flexbox no próprio header */
+  justify-content: center;   /* Centraliza horizontalmente */
+  align-items: center;       /* Centraliza verticalmente */
+}
+
+.centralizar-texto {
+  text-align: center; /* Centraliza especificamente o parágrafo */
+  width: 550px;  /* Tamanho fixo da imagem */
+}
+
+.imagem-container {
+  position: relative;
+  width: 550px;  /* Tamanho fixo da imagem */
+  height: 600px; /* Tamanho fixo da imagem */
+}
+
+.imagem-container {
+  position: relative; /* Define o contêiner da imagem como relativo */
+  display: inline-block; /* Para que o botão possa ser posicionado dentro dele */
+  text-align: center; /* Centraliza o texto dentro do contêiner */
+}
+
+.botoes-container {
+  display: flex;
+  flex-direction: column; /* Coloca os botões em coluna */
+  align-items: center; /* Centraliza os botões horizontalmente */
+  margin-top: 20px; /* Espaçamento entre a imagem e os botões */
+}
+
+.botao {
+  position: absolute; /* Faz com que o botão seja posicionado em relação ao contêiner pai */
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente para o botão */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  font-size: 16px; /* Tamanho da fonte do botão */
+  font-weight: bold; /* Negrito para destacar o texto */
+  z-index: 1; /* Garante que o botão fique acima da imagem */
+}
+
+.botao:hover {
+  background-color: #45a049; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo específico para os botões */
+.botao-rosto {
+  top: 15%; /* Centraliza verticalmente */
+  left: 50.2%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-pescoco {
+  top: 27%; /* Centraliza verticalmente */
+  right: 15%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-braco {
+  top: 47%; /* Centraliza verticalmente */
+  right: 5%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-ombro {
+  top: 35%; /* Centraliza verticalmente */
+  right: 55%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-peito {
+  top: 42%; /* Centraliza verticalmente */
+  left: 50.2%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-antebraco {
+  top: 70%; /* Centraliza verticalmente */
+  right: -0%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-espaconeutro {
+  top: 58%; /* Centraliza verticalmente */
+  left: 83%; /* Lado esquerdo */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-cintura {
+  top: 70%; /* Centraliza verticalmente */
+  right: 32.2%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-quadril {
+  top: 60%; /* Centraliza verticalmente */
+  right: 32.2%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-mao {
+  top: 85%; /* Centraliza verticalmente */
+  left: 20%; /* Lado esquerdo */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+/* Estilo específico para os botões */
+.botao-cabeca {
+  top: 14%; /* Centraliza verticalmente */
+  left: 63%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  width: 420px; /* Largura do botão */
+  height: 110px; /* Altura do botão */
+  padding: 20px;
+}
+
+.botao-testa {
+  top: 40%; /* Centraliza verticalmente */
+  right: -35%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 400px; /* Largura do botão */
+  height: 90px; /* Altura do botão */
+  padding: 10px;
+}
+
+.botao-sobrancelhas {
+  top: 53%; /* Centraliza verticalmente */
+  right: 29%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 180px; /* Largura do botão */
+  height: 40px; /* Altura do botão */
+  padding: 10px 10px;
+}
+
+.botao-olhos {
+  top: 68%; /* Centraliza verticalmente */
+  right: 38%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 120px; /* Largura do botão */
+  height: 60px; /* Altura do botão */
+  padding: 10px;
+}
+
+.botao-macasdorosto {
+  top: 85%; /* Centraliza verticalmente */
+  left: 90.2%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 120px; /* Largura do botão */
+  height: 80px; /* Altura do botão */
+  padding: 10px 10px;
+}
+
+.botao-nariz {
+  top: 79%; /* Centraliza verticalmente */
+  right: 18%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 100px; /* Largura do botão */
+  height: 220px; /* Altura do botão */
+  padding: 10px 10px;
+}
+
+.botao-boca {
+  top: 113%; /* Centraliza verticalmente */
+  left: 65%; /* Lado esquerdo */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 158px; /* Largura do botão */
+  height: 78px; /* Altura do botão */
+}
+
+.botao-maxilar {
+  top: 125%; /* Centraliza verticalmente */
+  right: -10%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-queixo {
+  top: 131.50%; /* Centraliza verticalmente */
+  right: 6.2%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  width: 155px; /* Largura do botão */
+  height: 75px; /* Altura do botão */
+}
+
+.botao-cabeca:hover, .botao-testa:hover, .botao-sobrancelhas:hover, .botao-olhos:hover, .botao-nariz:hover, .botao-macasdorosto:hover, .botao-boca:hover, .botao-maxilar:hover, .botao-queixo:hover {
+  background-color: #45a0497b; /* Cor de fundo ao passar o mouse */
+}
+
+#contain {
+  background-size: contain;
+}
+
+.imagem-contain {
+  display: flex;               /* Aplica o Flexbox */
+  justify-content: normal;      /* Centraliza as imagens horizontalmente */
+  align-items:normal;          /* Alinha as imagens verticalmente no centro */
+  gap: 20px;                    /* Espaçamento entre as imagens */
+  padding: 20px;
+}
+
+/* Imagens */
+.imagem-contain img {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;          /* Bordas arredondadas para as imagens */
+  transition: transform 0.3s;   /* Transição suave para efeitos */
+}
+
+.imagem-contain .cm:hover {
+  transform: scale(1.1);        /* Efeito de zoom ao passar o mouse */
+}
+
+.cm {
+  width: 180px;
+  height: 180px;
+  background-size: 120px;
+  border: 5px solid rgb(255, 224, 98);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 15px;
+  background-color: white;
+  padding: 3px;
+  max-width: 1200px; /* Limita a largura máxima */
+  background-size: contain;
+}

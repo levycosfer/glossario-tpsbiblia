@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Pesquisar Membros do Corpo</title>
+</head>
+<body> 
+    <h2 id="pesq-sinais" class="pesquisa-sinais-body" style="width: 550px;">Pesquisar os membros de corpo</h2>
+    <p class="centralizar-texto">Escolha um membro</p>
+    
+    <!-- A imagem é agora um link clicável -->
+    <div class="imagem-container">
+        <img class="centralizar-imagem" alt="Corporal" src="./assets/img/Corporal Parâmetro da Libras.jpeg">
+        
+        <!-- Botões posicionados -->
+        <button class="botao botao-rosto" onclick="mostrarTexto('rosto')">Rosto</button>
+        <button class="botao botao-ombro" onclick="mostrarTexto('ombros')">Ombros</button>
+        <button class="botao botao-pescoco" onclick="mostrarTexto('pescoco')">Pescoço</button>
+        <button class="botao botao-peito" onclick="mostrarTexto('peitos')">Peitos</button>
+        <button class="botao botao-braco" onclick="mostrarTexto('bracos')">Braços</button>
+        <button class="botao botao-antebraco" onclick="mostrarTexto('antebracos')">Antebraços</button>
+        <button class="botao botao-cintura" onclick="mostrarTexto('cintura')">Cintura</button>
+        <button class="botao botao-quadril" onclick="mostrarTexto('quadril')">Quadril</button>
+        <button class="botao botao-mao" onclick="mostrarTexto('maos')">Mãos</button>
+        <button class="botao botao-espaconeutro" onclick="mostrarTexto('espaconeutro')">Espaço Neutro</button>
+    </div>
+
+    <main id="conteudo"> 
+        <!-- O conteúdo carregado dinamicamente aparecerá aqui -->
+    </main>
+    
+    <script>
+        function mostrarTexto(opcao) {
+            var conteudo = document.getElementById('conteudo');
+            var arquivoParaCarregar = '';
+    
+            // Define o arquivo a ser carregado com base na opção escolhida
+            if (opcao === 'rosto') {
+                arquivoParaCarregar = './rosto.html'; // Altere para o arquivo correto
+            } else if (opcao === 'pescoco') {
+                arquivoParaCarregar = './pescoco.html'; // Certifique-se de que o arquivo existe
+            } else if (opcao === 'ombros') {
+                arquivoParaCarregar = './ombros.html'; // Certifique-se de que o arquivo existe
+            } else if (opcao === 'peitos') {
+                arquivoParaCarregar = './peitos.html'; // Certifique-se de que o arquivo existe
+            } else if (opcao === 'bracos') {
+                arquivoParaCarregar = './bracos.html'; // Certifique-se de que o arquivo existe
+            } else if (opcao === 'antebracos') {
+                arquivoParaCarregar = './antebracos.html'; // Certifique-se de que o arquivo existe
+            } else if (opcao === 'cintura') {
+                arquivoParaCarregar = './cintura.html'; // Certifique-se de que o arquivo existe
+            } else if (opcao === 'quadril') {
+                arquivoParaCarregar = './quadril.html'; // Certifique-se de que o arquivo existe
+            } else if (opcao === 'maos') {
+                arquivoParaCarregar = './maos.html'; // Certifique-se de que o arquivo existe
+            } else if (opcao === 'espaconeutro') {
+                arquivoParaCarregar = './espaconeutro.html'; // Certifique-se de que o arquivo existe
+            }
+    
+            // Fazendo uma requisição para carregar o arquivo especificado
+            if (arquivoParaCarregar) {
+                fetch(arquivoParaCarregar)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Problema ao carregar o conteúdo: ' + response.statusText);
+                        }
+                        return response.text();  // Obtém o conteúdo em formato de texto
+                    })
+                    .then(data => {
+                        conteudo.innerHTML = data;  // Insere o conteúdo no elemento "main"
+                    })
+                    .catch(error => {
+                        console.error('Erro ao carregar o conteúdo:', error);
+                        conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';  // Mensagem de erro
+                    });
+            }
+        }
+    </script>
+</body>
+</html>
+    
