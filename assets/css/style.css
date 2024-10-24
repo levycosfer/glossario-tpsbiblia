@@ -21,7 +21,6 @@ h1 {
 }
 
 .header-content {
-  display: flex;             /* Flexbox para alinhar logo e texto */
   justify-content: center;    /* Centraliza horizontalmente */
   align-items: center;        /* Centraliza verticalmente */
 }
