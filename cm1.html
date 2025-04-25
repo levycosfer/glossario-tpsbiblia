@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Sinais - CM1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .container {
+      display: flex;
+    }
+    .lista {
+      width: 40%;
+      max-height: 500px;
+      overflow-y: auto;
+      border-right: 1px solid #ccc;
+      padding-right: 20px;
+    }
+    .item {
+      margin: 5px 0;
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+    .video {
+      width: 60%;
+      padding-left: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 315px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Sinais - CM1</h1>
+  <div class="container">
+    <div class="lista" id="lista"></div>
+    <div class="video" id="video"></div>
+  </div>
+
+  <script>
+    const urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmkPQQC6sVyHjBwCf3AMyk5VLhe28eT44mo2pjDA8tFRe_vDOqe5Yp-b3VzW9rr0JAcy_ASjYblz4w/pub?gid=428260851&single=true&output=csv";
+
+    async function carregarDados() {
+      const resposta = await fetch(urlCSV);
+      const texto = await resposta.text();
+      const linhas = texto.trim().split('\n').slice(1); // Ignorar cabeçalho
+      const listaDiv = document.getElementById("lista");
+      const videoDiv = document.getElementById("video");
+
+      linhas.forEach(linha => {
+        const colunas = linha.split(',');
+
+        const nome = colunas[0].trim();
+        const youtube = colunas[4]?.trim();
+
+        if (youtube && youtube.startsWith("https://")) {
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.textContent = nome;
+          item.addEventListener('click', () => {
+            videoDiv.innerHTML = `
+              <h2>${nome}</h2>
+              <iframe src="${youtube.replace("watch?v=", "embed/")}" frameborder="0" allowfullscreen></iframe>
+            `;
+          });
+          listaDiv.appendChild(item);
+        }
+      });
+    }
+
+    carregarDados();
+  </script>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Sinais da Configuração CM1</title>
+    <style>
+        .video-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        iframe {
+            width: 560px;
+            height: 315px;
+        }
+
+        .video-container.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Configuração das Mãos: CM1</h1>
+    <p>Abaixo estão os sinais que usam a configuração CM1. Clique no nome para ver o vídeo:</p>
+  
+    <ul>
+        <li><a href="#" onclick="mostrarVideo('videoAbraao')">✋ <strong>Abraão</strong></a></li>
+        <li><a href="#" onclick="mostrarVideo('videoDeus')">✋ <strong>Deus</strong></a></li>
+        <li><a href="#" onclick="mostrarVideo('videoPromessa')">✋ <strong>Promessa</strong></a></li>
+    </ul>
+  
+    <div class="video-container" id="videoAbraao">
+        <h2>Vídeo: Abraão</h2>
+        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_1" frameborder="0" allowfullscreen></iframe>
+    </div>
+  
+    <div class="video-container" id="videoDeus">
+        <h2>Vídeo: Deus</h2>
+        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+    </div>
+  
+    <div class="video-container" id="videoPromessa">
+        <h2>Vídeo: Promessa</h2>
+        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_3" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <button class="botao botao-voltarcm" onclick="mostrarTexto('voltarcm')">Voltar CM</button>
+
+    <script>
+        function mostrarVideo(videoId) {
+            // Esconde todos os vídeos
+            var videos = document.querySelectorAll('.video-container');
+            videos.forEach(function(video) {
+                video.classList.remove('active');
+            });
+
+            // Exibe o vídeo clicado
+            var videoSelecionado = document.getElementById(videoId);
+            videoSelecionado.classList.add('active');
+        }
+
+        function mostrarTexto(textoId) {
+            alert("Texto: " + textoId);
+        }
+    </script>
+</body>
+</html>

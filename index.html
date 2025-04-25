@@ -39,59 +39,825 @@
 
 <!-- Script para mudar o conteúdo do main -->
 <script>
-  function mostrarTexto(opcao) {
-      var conteudo = document.getElementById('conteudo');
-
-      if (opcao === 'pesquisa') {
-          // Fazendo uma requisição para carregar o arquivo pesquisa-sinais.html
-          fetch('./pesquisa-sinais.html')
-              .then(response => response.text())
-              .then(data => {
-                  conteudo.innerHTML = data;
-              })
-              .catch(error => {
-                  console.error('Erro ao carregar o conteúdo:', error);
-                  conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
-              });
-      } else if (opcao === 'contato') {
-          conteudo.innerHTML = '<h2>Contato</h2><p>Entre em contato conosco pelo telefone ou email...</p>';
-      } else if (opcao === 'sobre') {
-          conteudo.innerHTML = '<h2>Sobre</h2><p>O Projeto de Tradução com Protagonismo Surdo (Bíblia TPS) conta hoje com a participação ativa de 20 pessoas, sendo 10 surdos e 10 ouvintes, entre teólogos bilíngues, intérpretes facilitadores e missionários, além de mais de 30 voluntários em todo o Brasil. O projeto é coordenado pelo pastor surdo Paulo Sérgio de Jesus Oliveira e conta com 9 equipes como: Tradução, Retrotradução, Validação, Testagem Comunitária, Glossário, Edição, Administração e Comunicação.</p><p>Conheça mais nosso site oficial <a href="https://bibliatps.org/quem-somos" style="text-decoration: none">BÍBLIA TPS</a></p>';
-      } else if (opcao === 'rosto') {
-          // Fazendo uma requisição para carregar o arquivo rosto.html
-          fetch('./rosto.html')
-              .then(response => response.text())
-              .then(data => {
-                  conteudo.innerHTML = data;
-              })
-              .catch(error => {
-                  console.error('Erro ao carregar o conteúdo:', error);
-                  conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
-              });
-      } else if (opcao === 'maos') {
-          // Fazendo uma requisição para carregar o arquivo maos.html
-          fetch('./maos.html')
-              .then(response => response.text())
-              .then(data => {
-                  conteudo.innerHTML = data;
-              })
-              .catch(error => {
-                  console.error('Erro ao carregar o conteúdo:', error);
-                  conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
-              });
-      } else if (opcao === 'braco') {
-          // Fazendo uma requisição para carregar o arquivo braco.html
-          fetch('./braco.html')
-              .then(response => response.text())
-              .then(data => {
-                  conteudo.innerHTML = data;
-              })
-              .catch(error => {
-                  console.error('Erro ao carregar o conteúdo:', error);
-                  conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
-              });
-      }
-  }
-</script>
+    function mostrarTexto(opcao) {
+        var conteudo = document.getElementById('conteudo');
+  
+        if (opcao === 'pesquisa') {
+            fetch('./pesquisa-sinais.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+        } else if (opcao === 'contato') {
+            conteudo.innerHTML = '<h2>Contato</h2><p>Entre em contato conosco pelo telefone ou email...</p>';
+        } else if (opcao === 'sobre') {
+            conteudo.innerHTML = '<h2>Sobre</h2><p>O Projeto de Tradução com Protagonismo Surdo...</p>';
+        } else if (opcao === 'rosto') {
+            fetch('./rosto.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+        } else if (opcao === 'maos') {
+            fetch('./maos.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+        } else if (opcao === 'braco') {
+            fetch('./braco.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+        } else if (opcao === 'voltarcm') {
+            fetch('./maos.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm1') {
+            fetch('./cm1.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+        } else if (opcao === 'cm2') {
+            fetch('./cm2.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+        } else if (opcao === 'cm3') {
+            fetch('./cm3.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+        } else if (opcao === 'cm4') {
+            fetch('./cm4.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+        } else if (opcao === 'cm5') {
+            fetch('./cm5.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm6') {
+            fetch('./cm6.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm7') {
+            fetch('./cm7.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm8') {
+            fetch('./cm8.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm9') {
+            fetch('./cm9.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm10') {
+            fetch('./cm10.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm11') {
+            fetch('./cm11.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm12') {
+            fetch('./cm12.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm13') {
+            fetch('./cm13.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm14') {
+            fetch('./cm14.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm15') {
+            fetch('./cm15.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm16') {
+            fetch('./cm16.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm17') {
+            fetch('./cm17.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm18') {
+            fetch('./cm18.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm19') {
+            fetch('./cm19.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm20') {
+            fetch('./cm20.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm21') {
+            fetch('./cm21.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm22') {
+            fetch('./cm22.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm23') {
+            fetch('./cm23.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm24') {
+            fetch('./cm24.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm25') {
+            fetch('./cm25.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm26') {
+            fetch('./cm26.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm27') {
+            fetch('./cm27.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm28') {
+            fetch('./cm28.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm29') {
+            fetch('./cm29.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm30') {
+            fetch('./cm30.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm31') {
+            fetch('./cm31.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm32') {
+            fetch('./cm32.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm33') {
+            fetch('./cm33.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm34') {
+            fetch('./cm34.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm35') {
+            fetch('./cm35.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm36') {
+            fetch('./cm36.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm37') {
+            fetch('./cm37.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm38') {
+            fetch('./cm38.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm39') {
+            fetch('./cm39.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm40') {
+            fetch('./cm40.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm41') {
+            fetch('./cm41.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm42') {
+            fetch('./cm42.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm43') {
+            fetch('./cm43.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm44') {
+            fetch('./cm44.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm45') {
+            fetch('./cm45.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm46') {
+            fetch('./cm46.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm47') {
+            fetch('./cm47.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm48') {
+            fetch('./cm48.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm49') {
+            fetch('./cm49.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm50') {
+            fetch('./cm50.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm51') {
+            fetch('./cm51.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm52') {
+            fetch('./cm52.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm53') {
+            fetch('./cm53.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm54') {
+            fetch('./cm54.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm55') {
+            fetch('./cm55.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm56') {
+            fetch('./cm56.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm57') {
+            fetch('./cm57.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm58') {
+            fetch('./cm58.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm59') {
+            fetch('./cm59.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm60') {
+            fetch('./cm60.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm61') {
+            fetch('./cm61.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm62') {
+            fetch('./cm62.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm63') {
+            fetch('./cm63.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm64') {
+            fetch('./cm64.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm65') {
+            fetch('./cm65.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm66') {
+            fetch('./cm66.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm67') {
+            fetch('./cm67.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm68') {
+            fetch('./cm68.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm69') {
+            fetch('./cm69.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm70') {
+            fetch('./cm70.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm71') {
+            fetch('./cm71.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm72') {
+            fetch('./cm72.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm73') {
+            fetch('./cm73.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm74') {
+            fetch('./cm74.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm75') {
+            fetch('./cm75.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        } else if (opcao === 'cm76') {
+            fetch('./cm76.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';
+                });
+        }
+    }
+  </script>
 </body>
 </html>

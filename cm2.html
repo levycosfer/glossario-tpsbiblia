@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Sinais da Configuração CM1</title>
+  <style>
+    .video-container iframe {
+      width: 100%;
+      max-width: 400px;
+      height: 225px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Configuração das Mãos: CM1</h1>
+  <p>Abaixo estão os sinais que usam a configuração CM1:</p>
+
+  <ul id="lista-sinais">
+    <!-- Sinais vão aparecer aqui -->
+  </ul>
+
+  <div class="video-container">
+    <h2>Vídeos no YouTube</h2>
+    <div id="videos">
+      <!-- Vídeos vão aparecer aqui -->
+    </div>
+  </div>
+
+  <button class="botao botao-voltarcm" onclick="mostrarTexto('voltarcm')">Voltar CM</button>
+
+  <script>
+    // Substitua abaixo pela URL publicada como CSV da sua planilha do Google
+    const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vZ4XpazX-xxxxxxxxxx/pub?output=csv';
+
+    fetch(url)
+      .then(res => res.text())
+      .then(csv => {
+        const linhas = csv.split('\n');
+        const lista = document.getElementById('lista-sinais');
+        const videos = document.getElementById('videos');
+
+        for (let i = 1; i < linhas.length; i++) {
+          const colunas = linhas[i].split(',');
+
+          const termo = colunas[0]?.trim();
+          const youtubeURL = colunas[4]?.trim();
+
+          if (termo) {
+            const li = document.createElement('li');
+            li.innerHTML = `✋ <strong>${termo}</strong>`;
+            lista.appendChild(li);
+          }
+
+          if (youtubeURL && youtubeURL.includes('youtube')) {
+            const videoId = youtubeURL.split('v=')[1]?.split('&')[0];
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
+            iframe.frameBorder = "0";
+            iframe.allowFullscreen = true;
+            videos.appendChild(iframe);
+          }
+        }
+      })
+      .catch(err => {
+        console.error('Erro ao carregar CSV:', err);
+        document.getElementById('lista-sinais').innerHTML = '<li>Erro ao carregar os sinais.</li>';
+      });
+  </script>
+</body>
+</html>
