@@ -17,75 +17,20 @@
         <!-- Botões posicionados -->
         <a href="./cabeca.html"><button class="botao botao-cabeca" onclick="mostrarTexto('cabeca')">Cabeça</button></a>
         <a href="./testa.html"><button class="botao botao-testa" onclick="mostrarTexto('testa')">Testa</button></a>
-        <button class="botao botao-sobrancelhas" onclick="mostrarTexto('sobrancelhas')">Sobrancelhas</button>
-        <button class="botao botao-olhos" onclick="mostrarTexto('olhos')">Olhos</button>
-        <button class="botao botao-macasdorosto" onclick="mostrarTexto('macasdorosto')">Maças do Rosto</button>
-        <button class="botao botao-nariz" onclick="mostrarTexto('nariz')">Nariz</button>
+        <a href="./sobrancelhas.html"><button class="botao botao-sobrancelhas" onclick="mostrarTexto('sobrancelhas')">Sobrencelhas</button></a>
+        <a href="./olhos.html"><button class="botao botao-olhos" onclick="mostrarTexto('olhos')">Olhos</button></a>
+        <a href="./macasderosto.html"><button class="botao botao-macasderosto" onclick="mostrarTexto('macasderosto')">Maças de Rosto</button></a>
+        <a href="./nariz.html"><button class="botao botao-nariz" onclick="mostrarTexto('nariz')">Nariz</button></a>
         <a href="./boca.html"><button class="botao botao-boca" onclick="mostrarTexto('boca')">Boca</button></a>
-        <button class="botao botao-maxilar" onclick="mostrarTexto('maxilar')">Maxilar</button>
-        <button class="botao botao-queixo" onclick="mostrarTexto('queixo')">Queixo</button>
+        <a href="./maxilar.html"><button class="botao botao-maxilar" onclick="mostrarTexto('maxilar')">Maxilar</button></a>
+        <a href="./queixo.html"><button class="botao botao-queixo" onclick="mostrarTexto('queixo')">Queixo</button></a>
+        <a href="./orelhas.html"><button class="botao botao-orelhas" onclick="mostrarTexto('orelhas')">Orelhas</button></a>
+        <a href="./rostoneutro.html"><button class="botao botao-rostoneutro" onclick="mostrarTexto('rosto neutro')">Rosto Neutro</button></a>
     </div>
 
     <main id="conteudo">
         <!-- O conteúdo carregado dinamicamente aparecerá aqui -->
     </main>
-
-    <script>
-        function mostrarTexto(opcao) {
-            var conteudo = document.getElementById('conteudo');
-            var arquivoParaCarregar = '';
-
-            // Define o arquivo a ser carregado com base na opção escolhida
-            switch (opcao) {
-                case 'cabeca':
-                    arquivoParaCarregar = './cabeca.html';
-                    break;
-                case 'testa':
-                    arquivoParaCarregar = './testa.html';
-                    break;
-                case 'sobrancelhas':
-                    arquivoParaCarregar = './sobrancelhas.html';
-                    break;
-                case 'olhos':
-                    arquivoParaCarregar = './olhos.html';
-                    break;
-                case 'macasdorosto':
-                    arquivoParaCarregar = './macasdorosto.html';
-                    break;
-                case 'nariz':
-                    arquivoParaCarregar = './nariz.html';
-                    break;
-                case 'boca':
-                    arquivoParaCarregar = './boca.html';
-                    break;
-                case 'maxilar':
-                    arquivoParaCarregar = './maxilar.html';
-                    break;
-                case 'queixo':
-                    arquivoParaCarregar = './queixo.html';
-                    break;
-                default:
-                    console.error('Opção inválida:', opcao);
-            }
-
-            // Fazendo uma requisição para carregar o arquivo especificado
-            if (arquivoParaCarregar) {
-                fetch(arquivoParaCarregar)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Problema ao carregar o conteúdo: ' + response.statusText);
-                        }
-                        return response.text();  // Obtém o conteúdo em formato de texto
-                    })
-                    .then(data => {
-                        conteudo.innerHTML = data;  // Insere o conteúdo no elemento "main"
-                    })
-                    .catch(error => {
-                        console.error('Erro ao carregar o conteúdo:', error);
-                        conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>';  // Mensagem de erro
-                    });
-            }
-        }
     </script>
 </body>
 </html>

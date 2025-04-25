@@ -151,8 +151,31 @@ html, body {
   z-index: 1; /* Garante que o botão fique acima da imagem */
 }
 
+.voltar {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.voltar button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Aumentado o padding */
+  font-size: 18px;    /* Aumentado o tamanho da fonte */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 8px; /* Arredondamento maior nos cantos */
+  transition: background-color 0.3s; /* Adicionando transição suave para hover */
+}
+
+.voltar button:hover {
+  background-color: #fc8f00;
+}
+
 .botao:hover {
-  background-color: #45a049; /* Cor de fundo ao passar o mouse */
+  background-color: #fc8f00; /* Cor de fundo ao passar o mouse */
 }
 
 /* Estilo específico para os botões */
@@ -174,9 +197,15 @@ html, body {
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
 }
 
-.botao-ombro {
+.botao-ombros {
   top: 35%; /* Centraliza verticalmente */
   right: 55%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+}
+
+.botao-tronco {
+  top: 55%; /* Centraliza verticalmente */
+  right: 65%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
 }
 
@@ -263,7 +292,7 @@ html, body {
   padding: 10px;
 }
 
-.botao-macasdorosto {
+.botao-macasderosto {
   top: 85%; /* Centraliza verticalmente */
   left: 90.2%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
@@ -275,9 +304,33 @@ html, body {
   padding: 10px 10px;
 }
 
+.botao-orelhas {
+  top: 78%; /* Centraliza verticalmente */
+  left: 120.2%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 100px; /* Largura do botão */
+  height: 220px; /* Altura do botão */
+  padding: 10px 10px;
+}
+
 .botao-nariz {
   top: 79%; /* Centraliza verticalmente */
   right: 18%; /* Lado direito */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 100px; /* Largura do botão */
+  height: 220px; /* Altura do botão */
+  padding: 10px 10px;
+}
+
+.botao-rostoneutro {
+  top: 120%; /* Centraliza verticalmente */
+  right: -38.2%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
@@ -312,7 +365,7 @@ html, body {
   height: 75px; /* Altura do botão */
 }
 
-.botao-cabeca:hover, .botao-testa:hover, .botao-sobrancelhas:hover, .botao-olhos:hover, .botao-nariz:hover, .botao-macasdorosto:hover, .botao-boca:hover, .botao-maxilar:hover, .botao-queixo:hover {
+.botao-cabeca:hover, .botao-testa:hover, .botao-sobrancelhas:hover, .botao-olhos:hover, .botao-nariz:hover, .botao-macasdorosto:hover, .botao-boca:hover, .botao-maxilar:hover, .botao-queixo:hover, .botao-macasderosto:hover, .botao-rostoneutro:hover, .botao-orelhas:hover {
   background-color: #45a0497b; /* Cor de fundo ao passar o mouse */
 }
 
