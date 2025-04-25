@@ -191,7 +191,7 @@ html, body {
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
 }
 
-.botao-braco {
+.botao-bracos {
   top: 47%; /* Centraliza verticalmente */
   right: 5%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
@@ -209,13 +209,13 @@ html, body {
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
 }
 
-.botao-peito {
+.botao-peitos {
   top: 42%; /* Centraliza verticalmente */
   left: 50.2%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
 }
 
-.botao-antebraco {
+.botao-antebracos {
   top: 70%; /* Centraliza verticalmente */
   right: -0%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
