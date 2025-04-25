@@ -52,12 +52,8 @@
                     console.error('Erro ao carregar o conteúdo:', error);
                     conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
                 });
-        } else if (opcao === 'contato') {
-            conteudo.innerHTML = '<h2>Contato</h2><p>Entre em contato conosco pelo telefone ou email...</p>';
-        } else if (opcao === 'sobre') {
-            conteudo.innerHTML = '<h2>Sobre</h2><p>O Projeto de Tradução com Protagonismo Surdo...</p>';
-        } else if (opcao === 'rosto') {
-            fetch('./rosto.html')
+        } else if (opcao === 'maos') {
+            fetch('./maos.html')
                 .then(response => response.text())
                 .then(data => {
                     conteudo.innerHTML = data;
@@ -66,8 +62,12 @@
                     console.error('Erro ao carregar o conteúdo:', error);
                     conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
                 });
-        } else if (opcao === 'maos') {
-            fetch('./maos.html')
+        } else if (opcao === 'contato') {
+            conteudo.innerHTML = '<h2>Contato</h2><p>Entre em contato conosco pelo telefone ou email...</p>';
+        } else if (opcao === 'sobre') {
+            conteudo.innerHTML = '<h2>Sobre</h2><p>O Projeto de Tradução com Protagonismo Surdo...</p>';
+        } else if (opcao === 'rosto') {
+            fetch('./rosto.html')
                 .then(response => response.text())
                 .then(data => {
                     conteudo.innerHTML = data;
@@ -87,7 +87,7 @@
                     conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
                 });
         } else if (opcao === 'voltarcm') {
-            fetch('./maos.html')
+            fetch('./index.html')
                 .then(response => response.text())
                 .then(data => {
                     conteudo.innerHTML = data;

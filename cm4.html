@@ -58,7 +58,7 @@
   <!-- Conteúdo Principal -->
   <div class="conteudo" id="conteudo">
     <h2>Ferramenta de Busca Sinais TPS Bíblia</h2>
-    <h1>Lista de Sinais - Boca</h1>
+    <h1>Lista de Sinais - CM4</h1>
 
     <div class="container">
       <div class="lista" id="lista"></div>
@@ -69,7 +69,7 @@
 
 <!-- Script para carregar os dados do Google Sheets -->
 <script>
-  const urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmkPQQC6sVyHjBwCf3AMyk5VLhe28eT44mo2pjDA8tFRe_vDOqe5Yp-b3VzW9rr0JAcy_ASjYblz4w/pub?gid=2055462985&single=true&output=csv";
+  const urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmkPQQC6sVyHjBwCf3AMyk5VLhe28eT44mo2pjDA8tFRe_vDOqe5Yp-b3VzW9rr0JAcy_ASjYblz4w/pub?gid=865830901&single=true&output=csv";
 
   async function carregarDados() {
     const resposta = await fetch(urlCSV);
@@ -220,7 +220,7 @@
                 console.error('Erro ao carregar o conteúdo:', error);
                 conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
             });
-          }
+    }
   }
 </script>
 

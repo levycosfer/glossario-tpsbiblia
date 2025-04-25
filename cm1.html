@@ -2,7 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Lista de Sinais - CM1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossário TPS Bíblia</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -36,116 +38,195 @@
 </head>
 <body>
 
-  <h1>Lista de Sinais - CM1</h1>
-  <div class="container">
-    <div class="lista" id="lista"></div>
-    <div class="video" id="video"></div>
+<!-- Header -->
+<header>
+  <div class="header-content">
+    <img alt="Logo" src="./assets/img/logo_TPS.png" class="logo" style="max-width: 400px; width: 100%;">
+    <h1>Glossário TPS Bíblia</h1>
+  </div>
+</header>
+
+<!-- Container para Lateral e Conteúdo Principal -->
+<div class="container">
+  <!-- Lateral (menu) -->
+  <div class="lateral">
+    <a href="#pesquisa" class="button" onclick="mostrarTexto('pesquisa')">Pesquisar sinais</a>
+    <a href="#contato" class="button" onclick="mostrarTexto('contato')">Contato</a>
+    <a href="#sobre" class="button" onclick="mostrarTexto('sobre')">Sobre</a>
   </div>
 
-  <script>
-    const urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmkPQQC6sVyHjBwCf3AMyk5VLhe28eT44mo2pjDA8tFRe_vDOqe5Yp-b3VzW9rr0JAcy_ASjYblz4w/pub?gid=428260851&single=true&output=csv";
+  <!-- Conteúdo Principal -->
+  <div class="conteudo" id="conteudo">
+    <h2>Ferramenta de Busca Sinais TPS Bíblia</h2>
+    <h1>Lista de Sinais - CM1</h1>
 
-    async function carregarDados() {
-      const resposta = await fetch(urlCSV);
-      const texto = await resposta.text();
-      const linhas = texto.trim().split('\n').slice(1); // Ignorar cabeçalho
-      const listaDiv = document.getElementById("lista");
-      const videoDiv = document.getElementById("video");
-
-      linhas.forEach(linha => {
-        const colunas = linha.split(',');
-
-        const nome = colunas[0].trim();
-        const youtube = colunas[4]?.trim();
-
-        if (youtube && youtube.startsWith("https://")) {
-          const item = document.createElement('div');
-          item.className = 'item';
-          item.textContent = nome;
-          item.addEventListener('click', () => {
-            videoDiv.innerHTML = `
-              <h2>${nome}</h2>
-              <iframe src="${youtube.replace("watch?v=", "embed/")}" frameborder="0" allowfullscreen></iframe>
-            `;
-          });
-          listaDiv.appendChild(item);
-        }
-      });
-    }
-
-    carregarDados();
-  </script>
-
-</body>
-</html>
-
-
-<!--<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Sinais da Configuração CM1</title>
-    <style>
-        .video-container {
-            margin-top: 20px;
-            display: none;
-        }
-
-        iframe {
-            width: 560px;
-            height: 315px;
-        }
-
-        .video-container.active {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-    <h1>Configuração das Mãos: CM1</h1>
-    <p>Abaixo estão os sinais que usam a configuração CM1. Clique no nome para ver o vídeo:</p>
-  
-    <ul>
-        <li><a href="#" onclick="mostrarVideo('videoAbraao')">✋ <strong>Abraão</strong></a></li>
-        <li><a href="#" onclick="mostrarVideo('videoDeus')">✋ <strong>Deus</strong></a></li>
-        <li><a href="#" onclick="mostrarVideo('videoPromessa')">✋ <strong>Promessa</strong></a></li>
-    </ul>
-  
-    <div class="video-container" id="videoAbraao">
-        <h2>Vídeo: Abraão</h2>
-        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_1" frameborder="0" allowfullscreen></iframe>
+    <div class="container">
+      <div class="lista" id="lista"></div>
+      <div class="video" id="video"></div>
     </div>
-  
-    <div class="video-container" id="videoDeus">
-        <h2>Vídeo: Deus</h2>
-        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_2" frameborder="0" allowfullscreen></iframe>
-    </div>
-  
-    <div class="video-container" id="videoPromessa">
-        <h2>Vídeo: Promessa</h2>
-        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_3" frameborder="0" allowfullscreen></iframe>
-    </div>
+  </div>
+</div>
 
-    <button class="botao botao-voltarcm" onclick="mostrarTexto('voltarcm')">Voltar CM</button>
+<!-- Script para carregar os dados do Google Sheets -->
+<script>
+  const urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmkPQQC6sVyHjBwCf3AMyk5VLhe28eT44mo2pjDA8tFRe_vDOqe5Yp-b3VzW9rr0JAcy_ASjYblz4w/pub?gid=1709085413&single=true&output=csv";
 
-    <script>
-        function mostrarVideo(videoId) {
-            // Esconde todos os vídeos
-            var videos = document.querySelectorAll('.video-container');
-            videos.forEach(function(video) {
-                video.classList.remove('active');
+  async function carregarDados() {
+    const resposta = await fetch(urlCSV);
+    const texto = await resposta.text();
+    const linhas = texto.trim().split('\n').slice(1); // Ignorar cabeçalho
+    const listaDiv = document.getElementById("lista");
+    const videoDiv = document.getElementById("video");
+
+    linhas.forEach(linha => {
+      const colunas = linha.split(',');
+      const nome = colunas[0].trim();
+      const youtube = colunas[4]?.trim();
+
+      if (youtube && youtube.startsWith("https://")) {
+        const item = document.createElement('div');
+        item.className = 'item';
+        item.textContent = nome;
+        item.addEventListener('click', () => {
+          videoDiv.innerHTML = `
+            <h2>${nome}</h2>
+            <iframe src="${youtube.replace("watch?v=", "embed/")}" frameborder="0" allowfullscreen></iframe>
+          `;
+        });
+        listaDiv.appendChild(item);
+      }
+    });
+  }
+
+  carregarDados();
+</script>
+
+<!-- Script para navegação -->
+<script>
+  function mostrarTexto(opcao) {
+    var conteudo = document.getElementById('conteudo');
+
+    if (opcao === 'pesquisa') {
+            fetch('./pesquisa-sinais.html')
+                .then(response => response.text())
+                .then(data => {
+                    conteudo.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o conteúdo:', error);
+                    conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+                });
+    } else if (opcao === 'maos') {
+        fetch('./maos.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
             });
+    } else if (opcao === 'contato') {
+        conteudo.innerHTML = '<h2>Contato</h2><p>Entre em contato conosco pelo telefone ou email...</p>';
+    } else if (opcao === 'sobre') {
+        conteudo.innerHTML = '<h2>Sobre</h2><p>O Projeto de Tradução com Protagonismo Surdo...</p>';
+    } else if (opcao === 'rosto') {
+        fetch('./rosto.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+    } else if (opcao === 'bracos') {
+        fetch('./bracos.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+    } else if (opcao === 'boca') {
+        fetch('./boca.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+    } else if (opcao === 'cintura') {
+        fetch('./cintura.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+    } else if (opcao === 'espaconeutro') {
+        fetch('./espaconeutro.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+    } else if (opcao === 'nariz') {
+        fetch('./nariz.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+    } else if (opcao === 'peitos') {
+        fetch('./peitos.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+    } else if (opcao === 'quadril') {
+        fetch('./quadril.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+    } else if (opcao === 'testa') {
+        fetch('./testa.html')
+            .then(response => response.text())
+            .then(data => {
+                conteudo.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar o conteúdo:', error);
+                conteudo.innerHTML = '<p>Erro ao carregar o conteúdo.</p>'; 
+            });
+          }
+  }
+</script>
 
-            // Exibe o vídeo clicado
-            var videoSelecionado = document.getElementById(videoId);
-            videoSelecionado.classList.add('active');
-        }
-
-        function mostrarTexto(textoId) {
-            alert("Texto: " + textoId);
-        }
-    </script>
+<!-- Footer -->
+<footer>
+  <!--<p>Desenvolvido por <a href="https://github.com/levycosfer" target="_blank" style="text-decoration: none;">GitHub by levycosfer</a></p>-->
+</footer>
 </body>
 </html>
