@@ -316,6 +316,18 @@ html, body {
   padding: 10px 10px;
 }
 
+.botao-tempora {
+  top: 44%; /* Centraliza verticalmente */
+  left: 120.2%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+  width: 100px; /* Largura do botão */
+  height: 220px; /* Altura do botão */
+  padding: 10px 10px;
+}
+
 .botao-nariz {
   top: 79%; /* Centraliza verticalmente */
   right: 18%; /* Lado direito */
@@ -365,7 +377,7 @@ html, body {
   height: 75px; /* Altura do botão */
 }
 
-.botao-cabeca:hover, .botao-testa:hover, .botao-sobrancelhas:hover, .botao-olhos:hover, .botao-nariz:hover, .botao-macasdorosto:hover, .botao-boca:hover, .botao-maxilar:hover, .botao-queixo:hover, .botao-macasderosto:hover, .botao-rostoneutro:hover, .botao-orelhas:hover {
+.botao-cabeca:hover, .botao-testa:hover, .botao-sobrancelhas:hover, .botao-olhos:hover, .botao-nariz:hover, .botao-macasdorosto:hover, .botao-boca:hover, .botao-maxilar:hover, .botao-queixo:hover, .botao-macasderosto:hover, .botao-rostoneutro:hover, .botao-orelhas:hover, .botao-tempora:hover {
   background-color: #45a0497b; /* Cor de fundo ao passar o mouse */
 }
 
