@@ -59,6 +59,7 @@
         <button onclick="window.location.href='pesquisa-sinais.html'">Corpo</button>
         <button onclick="window.location.href='index.html'">Home</button>
         </div>
+    
 
     <div class="container">
       <div class="lista" id="lista"></div>
@@ -81,7 +82,7 @@
     linhas.forEach(linha => {
       const colunas = linha.split(',');
       const nome = colunas[1].trim();
-      const youtube = colunas[13]?.trim();
+      const youtube = colunas[12]?.trim();
 
       if (youtube && youtube.startsWith("https://")) {
         const item = document.createElement('div');

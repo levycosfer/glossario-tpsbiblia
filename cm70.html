@@ -1,4 +1,3 @@
-
 <!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
@@ -35,6 +34,7 @@
 </head>
 <body>
 
+<!-- Header -->
 <header>
   <div class="header-content">
     <img alt="Logo" src="./assets/img/logo_TPS.png" class="logo" style="max-width: 400px; width: 100%;">
@@ -42,9 +42,12 @@
   </div>
 </header>
 
+<!-- Container para Lateral e Conteúdo Principal -->
 <div class="container">
+  <!-- Conteúdo Principal -->
   <div class="conteudo" id="conteudo">
     <h2>Ferramenta de busca de termos-sinais no Glossário TPS Bíblia</h2>
+    <!-- Título e imagem lado a lado -->
     <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
       <img src="./assets/img/70cm.png" class="cm" alt="CM 70" style="max-width: 160px;">
       <h1 style="margin: 0;">Lista de Sinais - CM70</h1>
@@ -54,8 +57,8 @@
       <button onclick="window.location.href='maos.html'">CM</button>
       <button onclick="window.location.href='pesquisa-sinais.html'">Corpo</button>
       <button onclick="window.location.href='index.html'">Home</button>
-      </div>
-  
+    </div>
+
     <div class="container">
       <div class="lista" id="lista"></div>
       <div class="video" id="video"></div>
@@ -63,6 +66,7 @@
   </div>
 </div>
 
+<!-- Script para carregar os dados do Google Sheets -->
 <script>
   const urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmkPQQC6sVyHjBwCf3AMyk5VLhe28eT44mo2pjDA8tFRe_vDOqe5Yp-b3VzW9rr0JAcy_ASjYblz4w/pub?gid=1316808630&single=true&output=csv";
 
@@ -75,8 +79,8 @@
 
     linhas.forEach(linha => {
       const colunas = linha.split(',');
-      const nome = colunas[0].trim();
-      const youtube = colunas[4]?.trim();
+      const nome = colunas[1].trim();
+      const youtube = colunas[12]?.trim();
 
       if (youtube && youtube.startsWith("https://")) {
         const item = document.createElement('div');
@@ -85,7 +89,7 @@
         item.addEventListener('click', () => {
           videoDiv.innerHTML = `
             <h2>${nome}</h2>
-            <iframe src="${youtube.replace("watch?v=", "embed/")}" frameborder="0" allowfullscreen></iframe>
+            <iframe src="${youtube.replace('watch?v=', 'embed/')}" frameborder="0" allowfullscreen></iframe>
           `;
         });
         listaDiv.appendChild(item);
@@ -96,6 +100,7 @@
   carregarDados();
 </script>
 
+<!-- Footer -->
 <footer>
 </footer>
 </body>
