@@ -126,6 +126,29 @@
             <option value="Duas Mãos Assimétricas">Duas Mãos Assimétricas</option>
           </select>
         </label>
+
+        <label>
+          Testamento:
+          <select id="testamento" style="padding: 8px; font-size: 18px;">
+            <option value="">Selecione</option>
+            <option value="Velho Testamento">Velho Testamento</option>
+            <option value="Novo Testamento">Novo Testamento</option>
+            <option value="Ambos">Ambos</option>
+          </select>
+        </label>
+
+        <label>
+          Livro:
+          <select id="nome_livro" style="padding: 8px; font-size: 18px;">
+            <option value="">Selecione</option>
+            <option value="Mateus">Mateus</option>
+            <option value="Lucas">Lucas</option>
+            <option value="Atos">Atos</option>
+            <option value="Romanos">Romanos</option>
+            <option value="2 Pedro">2 Pedro</option>
+            <option value="Apocalipse">Apocalipse</option>
+          </select>
+        </label>
       </div>
 
       <!-- Botão buscar -->
@@ -162,7 +185,9 @@
       palavra_de_que: document.getElementById('palavra_de_que').value.trim().toLowerCase(),
       movimento: document.getElementById('movimento').value.trim().toLowerCase(),
       expressao_facial: document.getElementById('expressao_facial').value.trim().toLowerCase(),
-      utiliza: document.getElementById('utiliza').value.trim().toLowerCase()
+      utiliza: document.getElementById('utiliza').value.trim().toLowerCase(),
+      testamento: document.getElementById('testamento').value.trim().toLowerCase(),
+      nome_livro: document.getElementById('nome_livro').value.trim().toLowerCase()
     };
 
     try {
@@ -182,7 +207,9 @@
           expressao_facial: colunas[8],
           utiliza: colunas[9],
           youtube: colunas[12],
-          drive: colunas[14]
+          drive: colunas[14],
+          testamento: colunas[15],
+          nome_livro: colunas[16]
         };
       });
 
@@ -195,7 +222,9 @@
           (!filtros.palavra_de_que || (item.palavra_de_que && item.palavra_de_que.toLowerCase().includes(filtros.palavra_de_que))) &&
           (!filtros.movimento || (item.movimento && item.movimento.toLowerCase().includes(filtros.movimento))) &&
           (!filtros.expressao_facial || (item.expressao_facial && item.expressao_facial.toLowerCase().includes(filtros.expressao_facial))) &&
-          (!filtros.utiliza || (item.utiliza && item.utiliza.toLowerCase().includes(filtros.utiliza)))
+          (!filtros.utiliza || (item.utiliza && item.utiliza.toLowerCase().includes(filtros.utiliza))) &&
+          (!filtros.testamento || (item.testamento && item.testamento.toLowerCase().includes(filtros.testamento))) &&
+          (!filtros.nome_livro || (item.nome_livro && item.nome_livro.toLowerCase().includes(filtros.nome_livro)))
         )
         .map(item => [item.palavra, item]) // usa palavra como chave
       ).values()];
