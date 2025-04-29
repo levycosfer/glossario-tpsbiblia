@@ -181,7 +181,8 @@
           movimento: colunas[7],
           expressao_facial: colunas[8],
           utiliza: colunas[9],
-          youtube: colunas[12]
+          youtube: colunas[12],
+          drive: colunas[14]
         };
       });
 
@@ -212,12 +213,32 @@
         sinaisFiltrados.forEach(sinal => {
           const sinalDiv = document.createElement('div');
           sinalDiv.style.marginBottom = '20px';
+          let embedVideo = '';
+
+          if (sinal.youtube && sinal.youtube.startsWith('https://')) {
+            // YouTube
+            embedVideo = `
+              <iframe width="300" height="169" src="${sinal.youtube.replace('watch?v=', 'embed/')}" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+            `;
+          } else if (sinal.drive && sinal.drive.includes('https://drive.google.com')) {
+            // Google Drive - extrair ID e montar embed
+            const match = sinal.drive.match(/\/d\/(.*)\/|id=([^&]+)/);
+            const videoId = match ? (match[1] || match[2]) : null;
+            if (videoId) {
+              embedVideo = `
+                <iframe width="300" height="169" src="https://drive.google.com/file/d/${videoId}/preview" 
+                  frameborder="0" allow="autoplay" allowfullscreen></iframe>
+              `;
+            }
+          }
+
           sinalDiv.innerHTML = `
             <h2>Palavra: ${sinal.palavra}</h2>
-            <iframe width="300" height="169" src="${sinal.youtube.replace('watch?v=', 'embed/')}" 
-              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
+            ${embedVideo || '<p>Vídeo não disponível.</p>'}
           `;
+
           resultadoDiv.appendChild(sinalDiv);
         });
       } else {
