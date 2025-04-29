@@ -201,6 +201,13 @@
 
       resultadoDiv.innerHTML = '';
 
+      const total = sinaisFiltrados.length;
+      const resultadoResumo = document.createElement('p');
+      resultadoResumo.style.fontWeight = 'bold';
+      resultadoResumo.style.marginBottom = '20px';
+      resultadoResumo.textContent = `Resultado(s) encontrado(s): ${total}`;
+      resultadoDiv.appendChild(resultadoResumo);
+
       if (sinaisFiltrados.length > 0) {
         sinaisFiltrados.forEach(sinal => {
           const sinalDiv = document.createElement('div');
