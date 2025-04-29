@@ -292,7 +292,7 @@ html, body {
   padding: 10px;
 }
 
-.botao-macasderosto {
+.botao-macasdorosto {
   top: 85%; /* Centraliza verticalmente */
   left: 90.2%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
@@ -377,7 +377,7 @@ html, body {
   height: 75px; /* Altura do botão */
 }
 
-.botao-cabeca:hover, .botao-testa:hover, .botao-sobrancelhas:hover, .botao-olhos:hover, .botao-nariz:hover, .botao-macasdorosto:hover, .botao-boca:hover, .botao-maxilar:hover, .botao-queixo:hover, .botao-macasderosto:hover, .botao-rostoneutro:hover, .botao-orelhas:hover, .botao-tempora:hover {
+.botao-cabeca:hover, .botao-testa:hover, .botao-sobrancelhas:hover, .botao-olhos:hover, .botao-nariz:hover, .botao-macasdorosto:hover, .botao-boca:hover, .botao-maxilar:hover, .botao-queixo:hover, .botao-macasdorosto:hover, .botao-rostoneutro:hover, .botao-orelhas:hover, .botao-tempora:hover {
   background-color: #45a0497b; /* Cor de fundo ao passar o mouse */
 }
 
