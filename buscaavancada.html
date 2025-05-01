@@ -72,6 +72,8 @@
     <form id="form-busca">
       <!-- Campos de busca -->
       <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+        <label for="palavra_chave">Palavra-chave:</label><input type="text" id="palavra_chave" name="palavra_chave">
+
         <label>
           Configuração da Mão:
           <select id="configuracao_maos" style="padding: 8px; font-size: 18px;">
@@ -141,12 +143,71 @@
           Livro:
           <select id="nome_livro" style="padding: 8px; font-size: 18px;">
             <option value="">Selecione</option>
+            <option value="Gênesis">Gênesis</option>
+            <option value="Êxodo">Êxodo</option>
+            <option value="Levítico">Levítico</option>
+            <option value="Números">Números</option>
+            <option value="Deuteronômio">Deuteronômio</option>
+            <option value="Josué">Josué</option>
+            <option value="Juízes">Juízes</option>
+            <option value="Rute">Rute</option>
+            <option value="1 Samuel">1 Samuel</option>
+            <option value="2 Samuel">2 Samuel</option>
+            <option value="1 Reis">1 Reis</option>
+            <option value="2 Reis">2 Reis</option>
+            <option value="1 Crônicas">1 Crônicas</option>
+            <option value="2 Crônicas">2 Crônicas</option>
+            <option value="Esdras">Esdras</option>
+            <option value="Neemias">Neemias</option>
             <option value="Ester">Ester</option>
+            <option value="Jó">Jó</option>
+            <option value="Salmos">Salmos</option>
+            <option value="Provérbios">Provérbios</option>
+            <option value="Eclesiastes">Eclesiastes</option>
+            <option value="Cânticos">Cânticos</option>
+            <option value="Isaías">Isaías</option>
+            <option value="Jeremias">Jeremias</option>
+            <option value="Lamentações">Lamentações</option>
+            <option value="Ezequiel">Ezequiel</option>
+            <option value="Daniel">Daniel</option>
+            <option value="Oseias">Oseias</option>
+            <option value="Joel">Joel</option>
+            <option value="Amós">Amós</option>
+            <option value="Obadias">Obadias</option>
+            <option value="Jonas">Jonas</option>
+            <option value="Miqueias">Miqueias</option>
+            <option value="Naum">Naum</option>
+            <option value="Habacuque">Habacuque</option>
+            <option value="Sofonias">Sofonias</option>
+            <option value="Ageu">Ageu</option>
+            <option value="Zacarias">Zacarias</option>
+            <option value="Malaquias">Malaquias</option>
             <option value="Mateus">Mateus</option>
+            <option value="Marcos">Marcos</option>
             <option value="Lucas">Lucas</option>
+            <option value="João">João</option>
             <option value="Atos">Atos</option>
             <option value="Romanos">Romanos</option>
+            <option value="1 Coríntios">1 Coríntios</option>
+            <option value="2 Coríntios">2 Coríntios</option>
+            <option value="Gálatas">Gálatas</option>
+            <option value="Efésios">Efésios</option>
+            <option value="Filipenses">Filipenses</option>
+            <option value="Colossenses">Colossenses</option>
+            <option value="1 Tessalonicenses">1 Tessalonicenses</option>
+            <option value="2 Tessalonicenses">2 Tessalonicenses</option>
+            <option value="1 Timóteo">1 Timóteo</option>
+            <option value="2 Timóteo">2 Timóteo</option>
+            <option value="Tito">Tito</option>
+            <option value="Filemom">Filemom</option>
+            <option value="Hebreus">Hebreus</option>
+            <option value="Tiago">Tiago</option>
+            <option value="1 Pedro">1 Pedro</option>
             <option value="2 Pedro">2 Pedro</option>
+            <option value="1 João">1 João</option>
+            <option value="2 João">2 João</option>
+            <option value="3 João">3 João</option>
+            <option value="Judas">Judas</option>
             <option value="Apocalipse">Apocalipse</option>
           </select>
         </label>
@@ -161,9 +222,27 @@
   </div>
 </div>
 
-<!-- Scripts -->
 <script>
-  // Preenche a seleção de configurações de mão
+  const normalizar = (str) =>
+    str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  const livrosVelhoTestamento = [
+    "gênesis", "êxodo", "levítico", "números", "deuteronômio",
+    "josué", "juízes", "rute", "1 samuel", "2 samuel", "1 reis", "2 reis",
+    "1 crônicas", "2 crônicas", "esdras", "neemias", "ester",
+    "jó", "salmos", "provérbios", "eclesiastes", "cânticos",
+    "isaías", "jeremias", "lamentações", "ezequiel", "daniel",
+    "oseias", "joel", "amós", "obadias", "jonas", "miqueias",
+    "naum", "habacuque", "sofonias", "ageu", "zacarias", "malaquias"
+  ].map(normalizar);
+
+  const livrosNovoTestamento = [
+    "mateus", "marcos", "lucas", "joão", "atos", "romanos", "1 coríntios", "2 coríntios",
+    "gálatas", "efésios", "filipenses", "colossenses", "1 tessalonicenses", "2 tessalonicenses",
+    "1 timóteo", "2 timóteo", "tito", "filemom", "hebreus", "tiago", "1 pedro", "2 pedro",
+    "1 joão", "2 joão", "3 joão", "judas", "apocalipse"
+  ].map(normalizar);
+
   const selectConfigMao = document.getElementById('configuracao_maos');
   for (let i = 1; i <= 76; i++) {
     const option = document.createElement('option');
@@ -180,6 +259,7 @@
     e.preventDefault();
 
     const filtros = {
+      palavra_chave: document.getElementById('palavra_chave').value.trim().toLowerCase(),
       configuracao_maos: document.getElementById('configuracao_maos').value.trim(),
       corporal: document.getElementById('corporal').value.trim().toLowerCase(),
       rosto: document.getElementById('rosto').value.trim().toLowerCase(),
@@ -199,11 +279,12 @@
       const dados = linhas.slice(1).map(linha => {
         const colunas = linha.split('\t');
         return {
-          palavra: colunas[1],
+          palavra_chave: colunas[1],
           configuracao_maos: colunas[2],
           corporal: colunas[3],
           rosto: colunas[4],
           palavra_de_que: colunas[5],
+          capitulo_versiculo: colunas[6],
           movimento: colunas[7],
           expressao_facial: colunas[8],
           utiliza: colunas[9],
@@ -214,25 +295,50 @@
         };
       });
 
-      // Usar Set para eliminar repetições da mesma palavra
-      const sinaisFiltrados = [...new Map(dados
-        .filter(item =>
-          (!filtros.configuracao_maos || item.configuracao_maos === filtros.configuracao_maos) &&
-          (!filtros.corporal || (item.corporal && item.corporal.toLowerCase().includes(filtros.corporal))) &&
-          (!filtros.rosto || (item.rosto && item.rosto.toLowerCase().includes(filtros.rosto))) &&
-          (!filtros.palavra_de_que || (item.palavra_de_que && item.palavra_de_que.toLowerCase().includes(filtros.palavra_de_que))) &&
-          (!filtros.movimento || (item.movimento && item.movimento.toLowerCase().includes(filtros.movimento))) &&
-          (!filtros.expressao_facial || (item.expressao_facial && item.expressao_facial.toLowerCase().includes(filtros.expressao_facial))) &&
-          (!filtros.utiliza || (item.utiliza && item.utiliza.toLowerCase().includes(filtros.utiliza))) &&
-          (!filtros.testamento || (item.testamento && item.testamento.toLowerCase().includes(filtros.testamento))) &&
-          (!filtros.nome_livro || (item.nome_livro && item.nome_livro.toLowerCase().includes(filtros.nome_livro)))
-        )
-        .map(item => [item.palavra, item]) // usa palavra como chave
-      ).values()];
+      const mapaSinais = new Map();
+
+    dados
+      .filter(item =>
+        (!filtros.palavra_chave || (item.palavra_chave && item.palavra_chave.toLowerCase().includes(filtros.palavra_chave))) &&
+        (!filtros.configuracao_maos || (
+          item.configuracao_maos &&
+          item.configuracao_maos.split(',').map(s => s.trim()).includes(filtros.configuracao_maos)
+        )) &&
+        (!filtros.corporal || (item.corporal && item.corporal.toLowerCase().includes(filtros.corporal))) &&
+        (!filtros.rosto || (item.rosto && item.rosto.toLowerCase().includes(filtros.rosto))) &&
+        (!filtros.palavra_de_que || (item.palavra_de_que && item.palavra_de_que.toLowerCase().includes(filtros.palavra_de_que))) &&
+        (!filtros.movimento || (item.movimento && item.movimento.toLowerCase().includes(filtros.movimento))) &&
+        (!filtros.expressao_facial || (item.expressao_facial && item.expressao_facial.toLowerCase().includes(filtros.expressao_facial))) &&
+        (!filtros.utiliza || (item.utiliza && item.utiliza.toLowerCase().includes(filtros.utiliza))) &&
+        (!filtros.testamento || filtros.testamento === 'ambos' ||
+          (filtros.testamento === 'novo testamento'
+            ? livrosNovoTestamento.includes(normalizar(item.nome_livro || ''))
+            : filtros.testamento === 'velho testamento'
+              ? livrosVelhoTestamento.includes(normalizar(item.nome_livro || ''))
+              : item.testamento && item.testamento.toLowerCase().includes(filtros.testamento))
+        ) &&
+        (!filtros.nome_livro || (item.nome_livro && item.nome_livro.toLowerCase().includes(filtros.nome_livro)))
+      )
+      .forEach(item => {
+        const chave = item.palavra_chave.toLowerCase();
+        if (!mapaSinais.has(chave)) {
+          mapaSinais.set(chave, {
+            palavra_chave: item.palavra_chave,
+            capitulo_versiculo: new Set(),
+            youtube: item.youtube,
+            drive: item.drive
+          });
+        }
+        if (item.capitulo_versiculo) {
+          mapaSinais.get(chave).capitulo_versiculo.add(item.capitulo_versiculo);
+        }
+      });
+
+      const sinaisFiltrados = Array.from(mapaSinais.values());
 
       resultadoDiv.innerHTML = '';
-
       const total = sinaisFiltrados.length;
+
       const resultadoResumo = document.createElement('p');
       resultadoResumo.style.fontWeight = 'bold';
       resultadoResumo.style.marginBottom = '20px';
@@ -246,14 +352,12 @@
           let embedVideo = '';
 
           if (sinal.youtube && sinal.youtube.startsWith('https://')) {
-            // YouTube
             embedVideo = `
               <iframe width="300" height="169" src="${sinal.youtube.replace('watch?v=', 'embed/')}" 
                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
               </iframe>
             `;
           } else if (sinal.drive && sinal.drive.includes('https://drive.google.com')) {
-            // Google Drive - extrair ID e montar embed
             const match = sinal.drive.match(/\/d\/(.*)\/|id=([^&]+)/);
             const videoId = match ? (match[1] || match[2]) : null;
             if (videoId) {
@@ -264,15 +368,18 @@
             }
           }
 
+          const referencias = Array.from(sinal.capitulo_versiculo).join(', ');
+
           sinalDiv.innerHTML = `
-            <h2>Palavra: ${sinal.palavra}</h2>
+            <h2>Palavra: ${sinal.palavra_chave}</h2>
+            <p>Referência(s): ${referencias || 'N/A'}</p>
             ${embedVideo || '<p>Vídeo não disponível.</p>'}
           `;
 
           resultadoDiv.appendChild(sinalDiv);
         });
       } else {
-        resultadoDiv.innerHTML = '<p>Nenhum sinal encontrado com os critérios selecionados.</p>';
+        resultadoDiv.innerHTML += '<p>Nenhum sinal encontrado com os critérios selecionados.</p>';
       }
     } catch (error) {
       console.error('Erro ao buscar dados da planilha:', error);
@@ -281,7 +388,6 @@
   });
 </script>
 
-<!-- Footer -->
 <footer style="margin-top: 40px; text-align: center;">
   <!-- Rodapé -->
   <!--<p>Desenvolvido por <a href="https://github.com/levycosfer" target="_blank" style="text-decoration: none;">GitHub by levycosfer</a></p>-->
