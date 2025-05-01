@@ -304,8 +304,18 @@
           item.configuracao_maos &&
           item.configuracao_maos.split(',').map(s => s.trim()).includes(filtros.configuracao_maos)
         )) &&
-        (!filtros.corporal || (item.corporal && item.corporal.toLowerCase().includes(filtros.corporal))) &&
-        (!filtros.rosto || (item.rosto && item.rosto.toLowerCase().includes(filtros.rosto))) &&
+        (!filtros.corporal || (
+          item.corporal &&
+          filtros.corporal.split(',').map(c => c.trim().toLowerCase()).every(termo =>
+            item.corporal.toLowerCase().includes(termo)
+          )
+        )) &&
+        (!filtros.rosto || (
+          item.rosto &&
+          filtros.rosto.split(',').map(r => r.trim().toLowerCase()).every(termo =>
+            item.rosto.toLowerCase().includes(termo)
+          )
+        )) &&
         (!filtros.palavra_de_que || (item.palavra_de_que && item.palavra_de_que.toLowerCase().includes(filtros.palavra_de_que))) &&
         (!filtros.movimento || (item.movimento && item.movimento.toLowerCase().includes(filtros.movimento))) &&
         (!filtros.expressao_facial || (item.expressao_facial && item.expressao_facial.toLowerCase().includes(filtros.expressao_facial))) &&
