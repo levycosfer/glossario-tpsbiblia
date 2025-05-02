@@ -67,32 +67,42 @@
 </div>
 
 <!-- Script para carregar os dados do Google Sheets -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
   const urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmkPQQC6sVyHjBwCf3AMyk5VLhe28eT44mo2pjDA8tFRe_vDOqe5Yp-b3VzW9rr0JAcy_ASjYblz4w/pub?gid=163241901&single=true&output=csv";
 
   async function carregarDados() {
     const resposta = await fetch(urlCSV);
     const texto = await resposta.text();
-    const linhas = texto.trim().split('\n').slice(1);
-    const listaDiv = document.getElementById("lista");
-    const videoDiv = document.getElementById("video");
 
-    linhas.forEach(linha => {
-      const colunas = linha.split(',');
-      const nome = colunas[1].trim();
-      const youtube = colunas[12]?.trim();
+    Papa.parse(texto, {
+      header: false,
+      skipEmptyLines: true,
+      complete: function(results) {
+        const linhas = results.data.slice(1); 
+        const listaDiv = document.getElementById("lista");
+        const videoDiv = document.getElementById("video");
+        const nomesUnicos = new Set(); // <-- Aqui dentro
 
-      if (youtube && youtube.startsWith("https://")) {
-        const item = document.createElement('div');
-        item.className = 'item';
-        item.textContent = nome;
-        item.addEventListener('click', () => {
-          videoDiv.innerHTML = `
-            <h2>${nome}</h2>
-            <iframe src="${youtube.replace('watch?v=', 'embed/')}" frameborder="0" allowfullscreen></iframe>
-          `;
+        linhas.forEach(colunas => {
+          const nome = colunas[1]?.trim();     
+          const youtube = colunas[12]?.trim(); 
+
+          if (nome && youtube && youtube.startsWith("https://") && !nomesUnicos.has(nome)) {
+            nomesUnicos.add(nome);
+            
+            const item = document.createElement('div');
+            item.className = 'item';
+            item.textContent = nome;
+            item.addEventListener('click', () => {
+              videoDiv.innerHTML = `
+                <h2>${nome}</h2>
+                <iframe src="${youtube.replace("watch?v=", "embed/")}" frameborder="0" allowfullscreen></iframe>
+              `;
+            });
+            listaDiv.appendChild(item);
+          }
         });
-        listaDiv.appendChild(item);
       }
     });
   }
