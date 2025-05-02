@@ -76,9 +76,7 @@
 
         <label>
           Configuração da Mão:
-          <select id="configuracao_maos" style="padding: 8px; font-size: 18px;">
-            <option value="">Selecione</option>
-          </select>
+          <input type="text" id="configuracao_maos" placeholder="Digite o número de CM" style="padding: 8px; font-size: 18px;">
         </label>
 
         <label>
@@ -215,14 +213,21 @@
 
       <!-- Botão buscar -->
       <button type="submit">Buscar</button>
+      <button type="button" onclick="limparFiltros()">Limpar Filtros</button>
 
       <!-- Resultado -->
       <div class="resultado" id="resultado" style="margin-top: 20px;"></div>
+      <div id="carregando" style="display: none; font-weight: bold; margin: 10px 0;">🔄 Carregando resultados...</div>
     </form>
   </div>
 </div>
 
 <script>
+  function limparFiltros() {
+  document.getElementById('form-busca').reset();
+  document.getElementById('resultado').innerHTML = '';
+  }
+
   const normalizar = (str) =>
     str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
@@ -243,20 +248,16 @@
     "1 joão", "2 joão", "3 joão", "judas", "apocalipse"
   ].map(normalizar);
 
-  const selectConfigMao = document.getElementById('configuracao_maos');
-  for (let i = 1; i <= 76; i++) {
-    const option = document.createElement('option');
-    option.value = i;
-    option.textContent = i;
-    selectConfigMao.appendChild(option);
-  }
-
   const form = document.getElementById('form-busca');
   const resultadoDiv = document.getElementById('resultado');
   const planilhaURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmkPQQC6sVyHjBwCf3AMyk5VLhe28eT44mo2pjDA8tFRe_vDOqe5Yp-b3VzW9rr0JAcy_ASjYblz4w/pub?gid=1779388886&single=true&output=tsv";
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const carregandoDiv = document.getElementById('carregando');
+    carregandoDiv.style.display = 'block';
+    resultadoDiv.innerHTML = '';
 
     const filtros = {
       palavra_chave: document.getElementById('palavra_chave').value.trim().toLowerCase(),
@@ -275,6 +276,7 @@
       const response = await fetch(planilhaURL);
       const text = await response.text();
       const linhas = text.trim().split('\n');
+      carregandoDiv.style.display = 'none';
 
       const dados = linhas.slice(1).map(linha => {
         const colunas = linha.split('\t');
@@ -302,7 +304,9 @@
         (!filtros.palavra_chave || (item.palavra_chave && item.palavra_chave.toLowerCase().includes(filtros.palavra_chave))) &&
         (!filtros.configuracao_maos || (
           item.configuracao_maos &&
-          item.configuracao_maos.split(',').map(s => s.trim()).includes(filtros.configuracao_maos)
+          filtros.configuracao_maos.split(',').map(s => s.trim()).some(valorBusca =>
+            item.configuracao_maos.split(',').map(c => c.trim()).includes(valorBusca)
+          )
         )) &&
         (!filtros.corporal || (
           item.corporal &&
@@ -393,6 +397,7 @@
       }
     } catch (error) {
       console.error('Erro ao buscar dados da planilha:', error);
+      carregandoDiv.style.display = 'none';
       resultadoDiv.innerHTML = '<p>Erro ao buscar os dados. Verifique sua conexão e tente novamente.</p>';
     }
   });
