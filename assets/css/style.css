@@ -673,7 +673,7 @@ html, body {
   }
 
   .botao-boca {
-    top: 70%;
+    top: 75%;
     left: 51%;
     width: 60px;
     height: 35px;
@@ -718,8 +718,8 @@ html, body {
   }
 
   .botao-orelhas {
-    top: 50%;
-    left: 90%;
+    top: 54%;
+    left: 95%;
     width: 22.5px;
     height: 70px;
     transform: translate(-50%, -50%) rotate(15deg);
