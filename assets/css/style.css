@@ -539,8 +539,74 @@ html, body {
   }
 
   .botao {
-    font-size: 12px;
+    font-size: 18px;
     padding: 5px 10px;
+  }
+
+  .botao-rosto {
+    top: 15%; /* Centraliza verticalmente */
+    left: 50.2%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-pescoco {
+    top: 27%; /* Centraliza verticalmente */
+    right: 15%; /* Lado direito */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-bracos {
+    top: 47%; /* Centraliza verticalmente */
+    right: 5%; /* Lado direito */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-ombros {
+    top: 35%; /* Centraliza verticalmente */
+    right: 55%; /* Lado direito */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-tronco {
+    top: 55%; /* Centraliza verticalmente */
+    right: 75%; /* Lado direito */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-peitos {
+    top: 42%; /* Centraliza verticalmente */
+    left: 50.2%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-antebracos {
+    top: 70%; /* Centraliza verticalmente */
+    right: -10%; /* Lado direito */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-espaconeutro {
+    top: 58%; /* Centraliza verticalmente */
+    left: 93%; /* Lado esquerdo */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-cintura {
+    top: 70%; /* Centraliza verticalmente */
+    right: 32.2%; /* Lado direito */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-quadril {
+    top: 60%; /* Centraliza verticalmente */
+    right: 32.2%; /* Lado direito */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
+  }
+  
+  .botao-mao {
+    top: 85%; /* Centraliza verticalmente */
+    left: 20%; /* Lado esquerdo */
+    transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   }
 
   .botao-cabeca {
