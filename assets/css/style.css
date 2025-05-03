@@ -628,8 +628,8 @@ html, body {
   }
 
   .botao-sobrancelhas {
-    top: 37%;
-    right: 45%;
+    top: 33%;
+    right: 50%;
     width: 65px;
     height: 20px;
     transform: translate(-50%, -50%);
@@ -637,10 +637,10 @@ html, body {
   }
 
   .botao-olhos {
-    top: 45%;
+    top: 42%;
     right: 53%;
-    width: 40px;
-    height: 20px;
+    width: 60px;
+    height: 30px;
     transform: translate(-50%, -50%);
     position: absolute;
   }
@@ -673,7 +673,7 @@ html, body {
   }
 
   .botao-boca {
-    top: 75%;
+    top: 70%;
     left: 51%;
     width: 60px;
     height: 35px;
@@ -683,7 +683,7 @@ html, body {
 
   .botao-mandibula {
     top: 75%;
-    right: 8%;
+    right: 15%;
     width: 45px;
     height: 95px;
     transform: translate(-50%, -50%) rotate(30deg);
@@ -691,7 +691,7 @@ html, body {
   }
 
   .botao-queixo {
-    top: 88%;
+    top: 85%;
     left: 52%;
     width: 55px;
     height: 20px;
@@ -701,7 +701,7 @@ html, body {
 
   .botao-rostoneutro {
     top: 80%;
-    right: -6%;
+    right: 1%;
     width: 35px;
     height: 60px;
     transform: translate(-50%, -50%);
@@ -718,8 +718,8 @@ html, body {
   }
 
   .botao-orelhas {
-    top: 52%;
-    left: 95%;
+    top: 50%;
+    left: 90%;
     width: 22.5px;
     height: 70px;
     transform: translate(-50%, -50%) rotate(15deg);
