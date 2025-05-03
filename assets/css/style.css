@@ -154,6 +154,11 @@ html, body {
   height: auto;
 }
 
+.lateral-texto {
+  text-align: left; 
+  width: 550px; 
+}
+
 .centralizar-texto {
   text-align: center; /* Centraliza especificamente o parágrafo */
   width: 550px;  /* Tamanho fixo da imagem */
