@@ -5,34 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Pesquisar Membros do Rosto</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .imagem-container {
+            position: relative;
+            text-align: center;
+            padding-bottom: 50px; /* evita corte no rodapé */
+        }
+
+        .centralizar-imagem {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .centralizar-texto {
+            text-align: center;
+        }
+
+        .botao {
+            position: absolute;
+            /* Posicionamentos específicos devem estar no CSS */
+        }
+
+        main#conteudo {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <h2 id="pesq-sinais" class="pesquisa-sinais-body" style="width: 550px;">Pesquisar os membros de corpo</h2>
     <p class="centralizar-texto">Escolha um membro</p>
-        
-    <!-- A imagem é agora um link clicável -->
+
     <div class="imagem-container">
         <img class="centralizar-imagem" alt="Rosto" src="./assets/img/rosto-tps.png">
 
-        <!-- Botões posicionados -->
-        <a href="./cabeca.html"><button class="botao botao-cabeca" onclick="mostrarTexto('cabeca')">Cabeça</button></a>
-        <a href="./testa.html"><button class="botao botao-testa" onclick="mostrarTexto('testa')">Testa</button></a>
-        <a href="./sobrancelhas.html"><button class="botao botao-sobrancelhas" onclick="mostrarTexto('sobrancelhas')">Sobrencelhas</button></a>
-        <a href="./olhos.html"><button class="botao botao-olhos" onclick="mostrarTexto('olhos')">Olhos</button></a>
-        <a href="./macasdorosto.html"><button class="botao botao-macasdorosto" onclick="mostrarTexto('macasdorosto')">Maças do Rosto</button></a>
-        <a href="./atm.html"><button class="botao botao-atm" onclick="mostrarTexto('atm')">ATM</button></a>
-        <a href="./nariz.html"><button class="botao botao-nariz" onclick="mostrarTexto('nariz')">Nariz</button></a>
-        <a href="./boca.html"><button class="botao botao-boca" onclick="mostrarTexto('boca')">Boca</button></a>
-        <a href="./mandibula.html"><button class="botao botao-mandibula" onclick="mostrarTexto('mandibula')">Mandíbula</button></a>
-        <a href="./queixo.html"><button class="botao botao-queixo" onclick="mostrarTexto('queixo')">Queixo</button></a>
-        <a href="./orelhas.html"><button class="botao botao-orelhas" onclick="mostrarTexto('orelhas')">Orelhas</button></a>
-        <a href="./tempora.html"><button class="botao botao-tempora" onclick="mostrarTexto('tempora')">Têmpora</button></a>
-        <a href="./rostoneutro.html"><button class="botao botao-rostoneutro" onclick="mostrarTexto('rosto neutro')">Rosto Neutro</button></a>
+        <a href="./cabeca.html"><button class="botao botao-cabeca">Cabeça</button></a>
+        <a href="./testa.html"><button class="botao botao-testa">Testa</button></a>
+        <a href="./sobrancelhas.html"><button class="botao botao-sobrancelhas">Sobrancelhas</button></a>
+        <a href="./olhos.html"><button class="botao botao-olhos">Olhos</button></a>
+        <a href="./macasdorosto.html"><button class="botao botao-macasdorosto">Maças do Rosto</button></a>
+        <a href="./atm.html"><button class="botao botao-atm">ATM</button></a>
+        <a href="./nariz.html"><button class="botao botao-nariz">Nariz</button></a>
+        <a href="./boca.html"><button class="botao botao-boca">Boca</button></a>
+        <a href="./mandibula.html"><button class="botao botao-mandibula">Mandíbula</button></a>
+        <a href="./queixo.html"><button class="botao botao-queixo">Queixo</button></a>
+        <a href="./orelhas.html"><button class="botao botao-orelhas">Orelhas</button></a>
+        <a href="./tempora.html"><button class="botao botao-tempora">Têmpora</button></a>
+        <a href="./rostoneutro.html"><button class="botao botao-rostoneutro">Rosto Neutro</button></a>
     </div>
 
     <main id="conteudo">
-        <!-- O conteúdo carregado dinamicamente aparecerá aqui -->
+        <!-- Conteúdo dinâmico será carregado aqui -->
     </main>
-    </script>
 </body>
 </html>

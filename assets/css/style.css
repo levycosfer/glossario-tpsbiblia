@@ -33,7 +33,7 @@ h1 {
 /* Layout principal: lateral (menu) + conteúdo */
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
   padding: 10px;
 }
@@ -65,6 +65,19 @@ iframe {
 
 /* Estilizando os botões */
 .button {
+  display: block; /* Para que o link ocupe toda a largura da div */
+  text-align: center;
+  padding: 10px 30px;
+  margin: 10px -100px; /* Espaçamento entre os botões */
+  background-color: #f0ad4e; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 8px; /* Borda arredondada */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+.buttoncm {
   display: block; /* Para que o link ocupe toda a largura da div */
   text-align: center;
   padding: 10px 30px;
@@ -194,6 +207,7 @@ html, body {
   cursor: pointer;
   border-radius: 8px; /* Arredondamento maior nos cantos */
   transition: background-color 0.3s; /* Adicionando transição suave para hover */
+  margin: 3px; /* Espaçamento entre os botões */
 }
 
 .voltar button:hover {
@@ -273,18 +287,18 @@ html, body {
 
 /* Estilo específico para os botões */
 .botao-cabeca {
-  top: 14%; /* Centraliza verticalmente */
-  left: 63%; /* Centraliza horizontalmente */
+  top: 9%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
-  width: 420px; /* Largura do botão */
-  height: 110px; /* Altura do botão */
+  width: 330px; /* Largura do botão */
+  height: 90px; /* Altura do botão */
   padding: 20px;
 }
 
 .botao-testa {
-  top: 40%; /* Centraliza verticalmente */
-  right: -35%; /* Lado direito */
+  top: 25%; /* Centraliza verticalmente */
+  right: -22%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
@@ -295,8 +309,8 @@ html, body {
 }
 
 .botao-sobrancelhas {
-  top: 53%; /* Centraliza verticalmente */
-  right: 29%; /* Lado direito */
+  top: 40%; /* Centraliza verticalmente */
+  right: 40%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
@@ -307,20 +321,20 @@ html, body {
 }
 
 .botao-olhos {
-  top: 68%; /* Centraliza verticalmente */
-  right: 38%; /* Lado direito */
+  top: 49.5%; /* Centraliza verticalmente */
+  right: 49%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 120px; /* Largura do botão */
-  height: 60px; /* Altura do botão */
+  width: 100px; /* Largura do botão */
+  height: 50px; /* Altura do botão */
   padding: 10px;
 }
 
 .botao-macasdorosto {
-  top: 85%; /* Centraliza verticalmente */
-  left: 90.2%; /* Centraliza horizontalmente */
+  top: 60%; /* Centraliza verticalmente */
+  left: 70.2%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
@@ -331,8 +345,8 @@ html, body {
 }
 
 .botao-atm {
-  top: 68%; /* Centraliza verticalmente */
-  left: 108.2%; /* Centraliza horizontalmente */
+  top: 48%; /* Centraliza verticalmente */
+  left: 84%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 20%; /* Torna a borda completamente arredondada para criar um círculo */
@@ -343,20 +357,20 @@ html, body {
 }
 
 .botao-orelhas {
-  top: 78%; /* Centraliza verticalmente */
-  left: 120.2%; /* Centraliza horizontalmente */
-  transform: translate(-50%, -50%) rotate(10deg); /* Centraliza o botão em relação ao seu próprio centro */
+  top: 58%; /* Centraliza verticalmente */
+  left: 93%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%) rotate(15deg); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 80%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 70px; /* Largura do botão */
-  height: 200px; /* Altura do botão */
+  width: 50px; /* Largura do botão */
+  height: 150px; /* Altura do botão */
   padding: 10px 10px;
 }
 
 .botao-tempora {
-  top: 45%; /* Centraliza verticalmente */
-  left: 120.2%; /* Centraliza horizontalmente */
+  top: 28%; /* Centraliza verticalmente */
+  left: 92%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
@@ -367,8 +381,8 @@ html, body {
 }
 
 .botao-nariz {
-  top: 79%; /* Centraliza verticalmente */
-  right: 17%; /* Lado direito */
+  top: 59%; /* Centraliza verticalmente */
+  left: 51%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
@@ -379,44 +393,44 @@ html, body {
 }
 
 .botao-rostoneutro {
-  top: 120%; /* Centraliza verticalmente */
-  right: -38.2%; /* Lado direito */
+  top: 85%; /* Centraliza verticalmente */
+  right: -10%; /* Lado direito */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 100px; /* Largura do botão */
-  height: 220px; /* Altura do botão */
+  width: 90px; /* Largura do botão */
+  height: 150px; /* Altura do botão */
   padding: 10px 10px;
 }
 
 .botao-boca {
-  top: 113%; /* Centraliza verticalmente */
-  left: 65%; /* Lado esquerdo */
+  top: 82%; /* Centraliza verticalmente */
+  left: 51%; /* Lado esquerdo */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   text-decoration: none; /* Remove o sublinhado */
-  border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
+  border-radius: 60%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 158px; /* Largura do botão */
-  height: 78px; /* Altura do botão */
+  width: 138px; /* Largura do botão */
+  height: 72px; /* Altura do botão */
 }
 
 .botao-mandibula {
-  top: 119%; /* Centraliza verticalmente */
-  right: -10%; /* Lado direito */
+  top: 80%; /* Centraliza verticalmente */
+  right: 8%; /* Lado direito */
   border-radius: 90%;
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 80%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 70px; /* Largura do botão */
-  height: 200px; /* Altura do botão */
+  width: 90px; /* Largura do botão */
+  height: 220px; /* Altura do botão */
   padding: 10px 10px;
-  transform: translate(-50%, -50%) rotate(40deg); /* Centraliza o botão em relação ao seu próprio centro */
+  transform: translate(-50%, -50%) rotate(30deg); /* Centraliza o botão em relação ao seu próprio centro */
 }
 
 .botao-queixo {
-  top: 134.50%; /* Centraliza verticalmente */
-  right: 6.2%; /* Lado direito */
+  top: 97%; /* Centraliza verticalmente */
+  left: 52%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   width: 155px; /* Largura do botão */
   height: 50px; /* Altura do botão */
