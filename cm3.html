@@ -60,6 +60,12 @@
         padding-top: 10px;
       }
     }
+
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+    
   </style>
   
   
@@ -90,10 +96,10 @@
       <button onclick="window.location.href='pesquisa-sinais.html'">Corpo</button>
       <button onclick="window.location.href='index.html'">Home</button>
     </div>
-
-    
+    <div id="loading" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+      <div style="border: 8px solid #f3f3f3; border-top: 8px solid #d26601; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite;"></div>
+    </div>    
     <div class="video" id="video"></div>
-
     <!-- Container com lista -->
     <div class="container">
       <div class="lista" id="lista"></div>
@@ -143,6 +149,11 @@
       }
     });
   }
+  const loading = document.getElementById('loading');
+
+carregarDados().then(() => {
+  loading.style.display = 'none';
+});
 
   carregarDados();
 </script>
