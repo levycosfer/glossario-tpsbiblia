@@ -612,17 +612,17 @@ html, body {
   .botao-cabeca {
     top: 10%;
     left: 50%;
-    width: 330px;
-    height: 100px;
+    width: 220px;
+    height: 50px;
     transform: translate(-50%, -50%);
     position: absolute;
   }
 
   .botao-testa {
-    top: 27%;
-    right: -14%;
-    width: 330px;
-    height: 60px;
+    top: 25%;
+    left: 50%;
+    width: 220px;
+    height: 50px;
     transform: translate(-50%, -50%);
     position: absolute;
   }
