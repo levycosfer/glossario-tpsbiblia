@@ -600,8 +600,8 @@ html, body {
   left: 50%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
-  width: 330px; /* Largura do botão */
-  height: 90px; /* Altura do botão */
+  width: 230px; /* Largura do botão */
+  height: 80px; /* Altura do botão */
   padding: 20px;
 }
 
@@ -612,8 +612,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 400px; /* Largura do botão */
-  height: 90px; /* Altura do botão */
+  width: 300px; /* Largura do botão */
+  height: 80px; /* Altura do botão */
   padding: 10px;
 }
 
@@ -624,8 +624,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 180px; /* Largura do botão */
-  height: 40px; /* Altura do botão */
+  width: 120px; /* Largura do botão */
+  height: 30px; /* Altura do botão */
   padding: 10px 10px;
 }
 
@@ -636,8 +636,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 100px; /* Largura do botão */
-  height: 50px; /* Altura do botão */
+  width: 80px; /* Largura do botão */
+  height: 40px; /* Altura do botão */
   padding: 10px;
 }
 
@@ -648,8 +648,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 120px; /* Largura do botão */
-  height: 80px; /* Altura do botão */
+  width: 100px; /* Largura do botão */
+  height: 70px; /* Altura do botão */
   padding: 10px 10px;
 }
 
@@ -660,8 +660,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 20%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 70px; /* Largura do botão */
-  height: 80px; /* Altura do botão */
+  width: 60px; /* Largura do botão */
+  height: 70px; /* Altura do botão */
   padding: 10px 10px;
 }
 
@@ -673,7 +673,7 @@ html, body {
   border-radius: 80%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
   width: 50px; /* Largura do botão */
-  height: 150px; /* Altura do botão */
+  height: 120px; /* Altura do botão */
   padding: 10px 10px;
 }
 
@@ -684,8 +684,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 100px; /* Largura do botão */
-  height: 220px; /* Altura do botão */
+  width: 90px; /* Largura do botão */
+  height: 190px; /* Altura do botão */
   padding: 10px 10px;
 }
 
@@ -696,8 +696,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 100px; /* Largura do botão */
-  height: 220px; /* Altura do botão */
+  width: 80px; /* Largura do botão */
+  height: 190px; /* Altura do botão */
   padding: 10px 10px;
 }
 
@@ -708,8 +708,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 90%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 90px; /* Largura do botão */
-  height: 150px; /* Altura do botão */
+  width: 80px; /* Largura do botão */
+  height: 110px; /* Altura do botão */
   padding: 10px 10px;
 }
 
@@ -720,7 +720,7 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 60%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 138px; /* Largura do botão */
+  width: 118px; /* Largura do botão */
   height: 72px; /* Altura do botão */
 }
 
@@ -731,8 +731,8 @@ html, body {
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 80%; /* Torna a borda completamente arredondada para criar um círculo */
   transition: background-color 0.3s ease; /* Efeito de transição */
-  width: 90px; /* Largura do botão */
-  height: 220px; /* Altura do botão */
+  width: 80px; /* Largura do botão */
+  height: 190px; /* Altura do botão */
   padding: 10px 10px;
   transform: translate(-50%, -50%) rotate(30deg); /* Centraliza o botão em relação ao seu próprio centro */
 }
@@ -741,7 +741,7 @@ html, body {
   top: 97%; /* Centraliza verticalmente */
   left: 52%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
-  width: 155px; /* Largura do botão */
+  width: 125px; /* Largura do botão */
   height: 50px; /* Altura do botão */
 }
 
