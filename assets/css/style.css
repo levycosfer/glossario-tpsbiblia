@@ -395,7 +395,7 @@ html, body {
   .botao-cabeca {
     top: 10%;
     left: 50%;
-    width: 220px;
+    width: 190px;
     height: 50px;
     transform: translate(-50%, -50%);
     position: absolute;
@@ -404,14 +404,14 @@ html, body {
   .botao-testa {
     top: 25%;
     left: 50%;
-    width: 220px;
+    width: 190px;
     height: 50px;
     transform: translate(-50%, -50%);
     position: absolute;
   }
 
   .botao-sobrancelhas {
-    top: 33%;
+    top: 38%;
     right: 50%;
     width: 65px;
     height: 20px;
