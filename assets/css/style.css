@@ -392,122 +392,19 @@ html, body {
     transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   }
 
-  .botao-cabeca {
-    top: 10%;
-    left: 50%;
-    width: 190px;
-    height: 50px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-testa {
-    top: 25%;
-    left: 50%;
-    width: 190px;
-    height: 50px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-sobrancelhas {
-    top: 38%;
-    right: 50%;
-    width: 65px;
-    height: 20px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-olhos {
-    top: 52%;
-    right: 58%;
-    width: 60px;
-    height: 30px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-nariz {
-    top: 65%;
-    left: 50%;
-    width: 35px;
-    height: 75px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-macasdorosto {
-    top: 65%;
-    left: 70%;
-    width: 60px;
-    height: 40px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-atm {
-    top: 45%;
-    left: 85%;
-    width: 25px;
-    height: 30px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-boca {
-    top: 72%;
-    left: 51%;
-    width: 60px;
-    height: 35px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-mandibula {
-    top: 75%;
-    right: 15%;
-    width: 45px;
-    height: 95px;
-    transform: translate(-50%, -50%) rotate(30deg);
-    position: absolute;
-  }
-
-  .botao-queixo {
-    top: 85%;
-    left: 52%;
-    width: 55px;
-    height: 20px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-rostoneutro {
-    top: 80%;
-    right: 1%;
-    width: 35px;
-    height: 60px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-tempora {
-    top: 30%;
-    left: 90%;
-    width: 35px;
-    height: 80px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-  }
-
-  .botao-orelhas {
-    top: 50%;
-    left: 95%;
-    width: 22.5px;
-    height: 70px;
-    transform: translate(-50%, -50%) rotate(15deg);
-    position: absolute;
-  }
+  .botao-cabeca      { top: 10%; left: 50%; width: 190px; height: 50px; transform: translate(-50%, -50%); }
+  .botao-testa       { top: 25%; left: 50%; width: 190px; height: 50px; transform: translate(-50%, -50%); }
+  .botao-sobrancelhas{ top: 38%; right: 50%; width: 65px; height: 20px; transform: translate(-50%, -50%); }
+  .botao-olhos       { top: 52%; right: 58%; width: 60px; height: 30px; transform: translate(-50%, -50%); }
+  .botao-nariz       { top: 65%; left: 50%; width: 35px; height: 75px; transform: translate(-50%, -50%); }
+  .botao-boca        { top: 72%; left: 51%; width: 60px; height: 35px; transform: translate(-50%, -50%); }
+  .botao-queixo      { top: 85%; left: 52%; width: 55px; height: 20px; transform: translate(-50%, -50%); }
+  .botao-orelhas     { top: 50%; left: 95%; width: 22.5px; height: 70px; transform: translate(-50%, -50%) rotate(15deg); }
+  .botao-tempora     { top: 30%; left: 90%; width: 35px; height: 80px; transform: translate(-50%, -50%); }
+  .botao-atm         { top: 45%; left: 85%; width: 25px; height: 30px; transform: translate(-50%, -50%); }
+  .botao-macasdorosto{ top: 65%; left: 70%; width: 60px; height: 40px; transform: translate(-50%, -50%); }
+  .botao-mandibula   { top: 75%; right: 15%; width: 45px; height: 95px; transform: translate(-50%, -50%) rotate(30deg); }
+  .botao-rostoneutro { top: 80%; right: 1%; width: 35px; height: 60px; transform: translate(-50%, -50%); }
 
   .imagem-contain {
     flex-direction: column;
@@ -743,6 +640,21 @@ html, body {
   transform: translate(-50%, -50%); /* Centraliza o botão em relação ao seu próprio centro */
   width: 125px; /* Largura do botão */
   height: 50px; /* Altura do botão */
+  
+}@media screen and (min-width: 769px) {
+  .botao-cabeca      { top: 9%; left: 50%; width: 230px; height: 80px; padding: 20px; transform: translate(-50%, -50%); }
+  .botao-testa       { top: 25%; right: -22%; width: 300px; height: 80px; padding: 10px; transform: translate(-50%, -50%); }
+  .botao-sobrancelhas{ top: 40%; right: 40%; width: 120px; height: 30px; padding: 10px; transform: translate(-50%, -50%); }
+  .botao-olhos       { top: 49.5%; right: 49%; width: 80px; height: 40px; padding: 10px; transform: translate(-50%, -50%); }
+  .botao-nariz       { top: 59%; left: 51%; width: 80px; height: 190px; padding: 10px; transform: translate(-50%, -50%); }
+  .botao-boca        { top: 82%; left: 51%; width: 118px; height: 72px; transform: translate(-50%, -50%); }
+  .botao-queixo      { top: 97%; left: 52%; width: 125px; height: 50px; transform: translate(-50%, -50%); }
+  .botao-orelhas     { top: 58%; left: 93%; width: 50px; height: 120px; padding: 10px; transform: translate(-50%, -50%) rotate(15deg); }
+  .botao-tempora     { top: 28%; left: 92%; width: 90px; height: 190px; padding: 10px; transform: translate(-50%, -50%); }
+  .botao-atm         { top: 48%; left: 84%; width: 60px; height: 70px; padding: 10px; transform: translate(-50%, -50%); }
+  .botao-macasdorosto{ top: 60%; left: 70.2%; width: 100px; height: 70px; padding: 10px; transform: translate(-50%, -50%); }
+  .botao-mandibula   { top: 80%; right: 8%; width: 80px; height: 190px; padding: 10px; transform: translate(-50%, -50%) rotate(30deg); }
+  .botao-rostoneutro { top: 85%; right: -10%; width: 80px; height: 110px; padding: 10px; transform: translate(-50%, -50%); }
 }
 
 .botao-cabeca:hover, .botao-testa:hover, .botao-sobrancelhas:hover, .botao-olhos:hover, .botao-nariz:hover, .botao-macasdorosto:hover, .botao-atm:hover, .botao-boca:hover, .botao-mandibula:hover, .botao-queixo:hover, .botao-macasdorosto:hover, .botao-rostoneutro:hover, .botao-orelhas:hover, .botao-tempora:hover {

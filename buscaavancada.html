@@ -372,14 +372,14 @@
         (!filtros.palavra_chave || (item.palavra_chave && item.palavra_chave.toLowerCase().includes(filtros.palavra_chave))) &&
         (!filtros.configuracao_maos || (
           item.configuracao_maos &&
-          filtros.configuracao_maos.split(',').map(s => s.trim()).some(valorBusca =>
+          filtros.configuracao_maos.split(',').map(v => v.trim()).every(valorBusca =>
             item.configuracao_maos.split(',').map(c => c.trim()).includes(valorBusca)
           )
         )) &&
         (!filtros.corporal || (
           item.corporal &&
           filtros.corporal.split(',').map(c => c.trim().toLowerCase()).every(termo =>
-            item.corporal.toLowerCase().includes(termo)
+            item.corporal.toLowerCase().split(',').map(e => e.trim()).includes(termo)
           )
         )) &&
         (!filtros.rosto || (
